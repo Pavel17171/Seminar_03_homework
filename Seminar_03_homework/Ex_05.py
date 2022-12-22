@@ -9,9 +9,10 @@ list_negfib = []
 for i in range(number + 1):
     if i < 2:
         list_fib.append(i)
-        list_negfib.append(-i)
+        list_negfib.append(((-1)**(i+1))*i)
     else:
-        list_fib.append(list_fib[i - 1] + list_fib[i - 2])
-        list_negfib.append(-list_fib[i])        
+        temp = list_fib[i - 1] + list_fib[i - 2]
+        list_fib.append(temp)
+        list_negfib.append((-1) ** (i + 1) * temp)        
 list_negfib = list_negfib[:0:-1] + list_fib
 print(list_negfib)
